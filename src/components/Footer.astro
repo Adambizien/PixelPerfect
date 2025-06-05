@@ -1,0 +1,73 @@
+---
+import icon from '../assets/icon.svg';
+---
+<footer class="bg-black text-gray-200 w-full py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <div class="space-y-4">
+        <div class="flex items-center">
+          <span class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-violet-600 bg-clip-text text-transparent">
+            <img src={icon.src} alt="PixelPerfect Logo" class="h-20 w-auto" />
+          </span>
+        </div>
+        <p class="text-gray-400">
+          Nous créons des <span class="text-violet-400 font-medium">solutions digitales</span> innovantes pour votre business.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-violet-400 mb-4">Navigation</h3>
+        <ul class="space-y-3">
+          <li><a href="/" class="hover:text-violet-300 transition-colors">Accueil</a></li>
+          <li><a href="/services" class="hover:text-violet-300 transition-colors">Services</a></li>
+          <li><a href="/about" class="hover:text-violet-300 transition-colors">À propos</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-violet-400 mb-4">Contact</h3>
+        <address class="not-italic space-y-3">
+          <p class="flex items-center">
+            <span class="text-violet-400 mr-2">✉</span> contact@monsite.com
+          </p>
+          <p class="flex items-center">
+            <span class="text-violet-400 mr-2">📞</span> +33 1 23 45 67 89
+          </p>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-violet-400 mb-4">Réseaux</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-violet-600 transition-colors">
+            <span class="sr-only">Twitter</span>
+            <span class="text-violet-400">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                    <path  fill="#ffffff"  d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
+                </svg>
+            </span>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-violet-600 transition-colors">
+            <span class="sr-only">Instagram</span>
+            <span class="text-violet-400">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path></g></g>
+                </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm">
+        © 2023 <span class="text-violet-400 font-medium">Mon Entreprise</span>. Tous droits réservés.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="/mentions-legales" class="text-gray-500 hover:text-violet-300 text-sm transition-colors">Mentions légales</a>
+        <a href="/confidentialite" class="text-gray-500 hover:text-violet-300 text-sm transition-colors">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>

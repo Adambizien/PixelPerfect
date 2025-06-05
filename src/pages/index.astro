@@ -1,11 +1,117 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Testimonial from '../components/Testimonial.astro';
+import femme1 from '../assets/avatars/femme-1.png';
+import homme1 from '../assets/avatars/homme-1.png';
+import femme2 from '../assets/avatars/femme-2.png';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const services = [
+  {
+    title: "Développement Web",
+    description: "Sites web sur mesure optimisés pour les performances et le SEO.",
+    icon: "💻"
+  },
+  {
+    title: "Applications Mobile",
+    description: "Applications natives et cross-platform pour iOS et Android.",
+    icon: "📱"
+  },
+  {
+    title: "Design UI/UX",
+    description: "Interfaces intuitives et expériences utilisateur mémorables.",
+    icon: "🎨"
+  }
+];
+const testimonials = [
+  {
+    quote: "Service exceptionnel et réactif. L'équipe a su comprendre nos besoins spécifiques et livrer un travail de qualité.",
+    author: "Marie Dupont",
+    role: "Directrice Marketing",
+    image: femme1
+  },
+  {
+    quote: "Un professionnalisme rare. Notre projet a été mené à bien dans les délais avec des résultats dépassant nos attentes.",
+    author: "Jean Martin",
+    role: "CEO, TechSolutions",
+    image: homme1
+  },
+  {
+    quote: "Collaboration fructueuse depuis 2 ans. Réactivité, écoute et expertise technique au top niveau.",
+    author: "Sophie Leroy",
+    role: "Responsable Communication",
+    image: femme2
+  }
+];
 ---
 
 <Layout>
-	<Welcome />
+	<HeroSection 
+		title="Bienvenue chez PixelPerfect"
+		subtitle="Nous concevons et développons des sites web performants qui convertissent vos visiteurs en clients"
+		linkServicesText="Découvrir nos services"
+		linkServices="/services"
+		linkContactText="Nous contacter"
+		linkContact="/contact"
+	/>
+
+	<section class="py-16 px-4 max-w-6xl mx-auto">
+		<div class="absolute bottom-0 right-0 w-32 h-32 bg-purple-600 rounded-full mix-blend-screen opacity-20 transform translate-x-12 -translate-y-12 hidden md:block"></div>
+    	<div class="absolute bottom-0 left-0 w-40 h-40 bg-indigo-500 rounded-full mix-blend-screen opacity-20 transform -translate-x-12 translate-y-12 hidden md:block"></div>
+		<h2 class="text-3xl font-bold text-center mb-12">Nos services</h2>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+		{services.map((service) => (
+			<ServiceCard 
+				title={service.title}
+				description={service.description}
+				icon={service.icon}
+			/>
+		))}
+		</div>
+	</section>
+	<section class="relative py-24 px-6 overflow-hidden bg-purple-900/5">
+		<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/10 to-purple-900/3"></div>
+		<div class="absolute top-1/4 -right-20 w-64 h-64 rounded-full bg-purple-800/5 blur-xl hidden md:block"></div>
+		<div class="absolute bottom-1/3 -left-20 w-72 h-72 rounded-full bg-indigo-800/5 blur-xl hidden md:block"></div>
+
+		<div class="relative max-w-5xl mx-auto text-center">
+			<h2 class="text-4xl font-bold mb-10 text-gray-800">Notre approche centrée sur vos résultats</h2>
+			<div class="prose-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+				<p class="mb-6">
+					Chez PixelPerfect, nous ne créons pas simplement des sites web - nous concevons des <span class="font-semibold text-purple-600">expériences digitales</span> qui génèrent des résultats tangibles pour votre entreprise.
+				</p>
+				<p class="mb-6">
+					Notre méthodologie repose sur 3 piliers fondamentaux : <span class="font-semibold text-gray-700">compréhension approfondie</span> de vos objectifs, <span class="font-semibold text-gray-700">exécution technique irréprochable</span> et <span class="font-semibold text-gray-700">optimisation continue</span> pour maximiser votre ROI.
+				</p>
+				<p>
+					Chaque projet bénéficie d'un accompagnement personnalisé et d'une communication transparente à chaque étape du processus.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16">
+ 		<div class="max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-12">Nos clients satisfaits</h2>
+			<div class="grid md:grid-cols-3 gap-5">
+				{testimonials.map((testimonial) => (
+					<Testimonial 
+						quote={testimonial.quote}
+						author={testimonial.author}
+						role={testimonial.role}
+						image={testimonial.image}
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<CtaSection 
+		title="Prêt à transformer votre présence en ligne ?"
+		description="Contactez-nous pour discuter de votre projet."
+		ctaText="Nous contacter"
+		ctaLink="/contact"
+	/>
 </Layout>

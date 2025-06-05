@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+const { quote, author, role, image } = Astro.props;
+---
+<figure class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+  <div class="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-full border-4 border-indigo-100">
+    <Image
+      src={image} 
+      alt={author}
+      width="96"
+      height="96"
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <blockquote class="text-lg font-medium italic mb-6 text-gray-700">
+    "{quote}"
+  </blockquote>
+  <figcaption>
+    <div class="font-bold text-indigo-600 text-xl">{author}</div>
+    <div class="text-gray-500 mt-1">{role}</div>
+    <div class="flex justify-center mt-4 text-yellow-400">
+      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+    </div>
+  </figcaption>
+</figure>
