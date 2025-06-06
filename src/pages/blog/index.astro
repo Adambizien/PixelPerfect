@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const allArticles = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<Layout title="Blog - Tous les articles">
+  <HeroSection 
+    title="Bienvenue sur notre blog"
+    subtitle="Découvrez nos derniers articles et tutoriels"
+  />
+  
+  <div class="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-600 dark:from-purple-400 dark:to-purple-400 mb-4">
+          Tous les articles
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Explorez notre collection d'articles soigneusement rédigés par notre équipe d'experts.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {allArticles.map((article) => (
+          <ArticleCard article={article} />
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

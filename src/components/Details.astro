@@ -1,0 +1,20 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqItems: FAQItem[];
+  title?: string;
+  description?: string;
+}
+
+const { faqItems, title = "Frequently Asked Questions", description = "Find answers to common questions about our product or service." } = Astro.props;
+---
+
+<details>
+    <summary class="text-2xl font-bold mb-4">{title}</summary>
+    <div class="mb-6 text-gray-600">{description}</div>
+</details>
+
