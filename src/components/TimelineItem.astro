@@ -1,0 +1,20 @@
+---
+interface Props {
+  year: string;
+  title: string;
+  description: string;
+  side: 'left' | 'right';
+}
+
+const { year, title, description, side } = Astro.props;
+---
+
+<div class={`mb-8 flex justify-between items-center w-full ${side === 'left' ? 'flex-row-reverse' : ''}`}>
+  <div class={`order-1 w-5/12 ${side === 'left' ? 'text-right' : 'text-left'}`}>
+    <h4 class="text-lg font-bold text-gray-800">{title}</h4>
+    <p class="text-gray-600">{description}</p>
+  </div>
+  <div class="order-1 px-4 py-2 bg-purple-500 text-white rounded-full shadow-lg">
+    {year}
+  </div>
+</div>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  image: string;
+}
+import { Image } from 'astro:assets';
+
+const { name, role, image } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+  <Image
+    src={image}
+    alt={name}
+    class="w-full h-64 object-cover"
+    loading="lazy"
+    width={400}
+    height={300}
+    sizes="(max-width: 768px) 100vw, 50vw"
+  />
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800">{name}</h3>
+    <p class="text-purple-600 mb-4">{role}</p>
+  </div>
+</div>

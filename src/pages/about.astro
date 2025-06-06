@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import teamImage from '../assets/teams.png';
+import CtaSection from '../components/CtaSection.astro';
+import TextImageSection from '../components/TextImageSection.astro';
+import ValuesSection from '../components/ValuesSection.astro';
+import HistorySection from '../components/HistorySection.astro';
+import TeamSection from '../components/TeamSection.astro';
+import team1 from '../assets/team/team1.png';
+import team2 from '../assets/team/team2.png';
+import team3 from '../assets/team/team3.png';
+import team4 from '../assets/team/team4.png';
+
+const values =[
+	{
+		title : "Inovation",
+		description : "Nous repoussons constamment les limites pour offrir des solutions avant-gardistes et adaptées aux défis modernes.",
+		icon : "💡"
+	},
+	{
+		title : "Transparence",
+		description : "Des relations honnêtes et claires avec nos clients sont au cœur de notre philosophie d'entreprise.",
+		icon : "🔍"
+	},
+	{
+		title : "Excellence",
+		description : "Nous nous engageons à fournir un travail de qualité supérieure dans chaque projet, quel que soit sa taille.",
+		icon : "✨"
+	}
+]
+
+interface HistoryItem {
+  year: string;
+  title: string;
+  description: string;
+  side: "left" | "right";
+}
+
+const history: HistoryItem[] = [
+  {
+    year: "2018",
+    title: "Fondation",
+    description: "Création de l'agence avec une petite équipe passionnée par le web et le design.",
+    side: "left"
+  },
+  {
+    year: "2020",
+    title: "Premier grand projet",
+    description: "Collaboration avec notre premier client corporate qui nous a permis de nous faire connaître.",
+    side: "right"
+  },
+  {
+    year: "2022",
+    title: "Expansion",
+    description: "Ouverture de nouveaux bureaux et recrutement d'experts complémentaires.",
+    side: "left"
+  },
+  {
+    year: "2025",
+    title: "Aujourd'hui",
+    description: "Une équipe de 15 experts dédiés à l'excellence digitale pour nos clients.",
+    side: "right"
+  }
+];
+
+interface TeamMember {
+  name: string;
+  role: string;
+  image: any;
+}
+
+const Team: TeamMember[] = [
+	{
+		name: "Le fou du c*l",
+		role: "Chef de Projet",
+		image: team1
+	},
+	{
+		name: "Philippe Echtttttttttttebez",
+		role: "Technicien controle qualité",
+		image: team2
+	},
+	{
+		name: "Le fou de la Gare",
+		role: "Designer UI/UX",
+		image: team3
+	},
+	{
+		name: "Manuel Ferrero",
+		role: "Responsable RH",
+		image: team4
+	}
+]
+---
+
+<Layout>
+	<HeroSection 
+		title="À propos de nous"
+		subtitle="Découvrez notre équipe passionnée et notre mission de transformer votre présence en ligne"
+		linkServicesText="Découvrir nos services"
+		linkServices="/services"
+		linkContactText="Nous contacter"
+		linkContact="/contact"
+	/>
+
+    <TextImageSection
+        title="Notre Mission"
+        description="Chez PixelPerfect, nous croyons que chaque entreprise mérite une présence en ligne exceptionnelle. Notre mission est de créer des solutions digitales sur mesure qui propulsent votre business et créent des connexions authentiques avec votre audience."
+        image={teamImage}
+        imageAlt="Notre équipe en action"
+        imagePosition="right"
+    />
+
+	<ValuesSection
+		values={values} 
+		backgroundColor="gray" 
+	/>
+	 
+	<HistorySection history={history} />
+
+	<TeamSection team={Team} />
+
+
+    <CtaSection 
+		title="Prêt à transformer votre présence en ligne ?"
+		description="Contactez-nous pour discuter de votre projet."
+		ctaText="Nous contacter"
+		ctaLink="/contact"
+	/>
+	
+</Layout>

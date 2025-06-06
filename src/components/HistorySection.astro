@@ -1,0 +1,31 @@
+---
+import TimelineItem from './TimelineItem.astro';
+
+interface Props {
+  history: {
+    year: string;
+    title: string;
+    description: string;
+    side: "left" | "right";
+  }[];
+}
+
+const { history } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Notre Histoire</h2>
+    <div class="relative">
+      <div class="border-l-2 border-purple-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
+      {history.map((item) => (
+        <TimelineItem 
+          year={item.year} 
+          title={item.title}
+          description={item.description}
+          side={item.side}
+        />
+      ))}
+    </div>
+  </div>
+</section>

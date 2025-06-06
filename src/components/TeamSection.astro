@@ -1,0 +1,30 @@
+---
+import TeamMember from './TeamMember.astro';
+
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+}
+
+interface Props {
+  team: TeamMember[];
+}
+
+const { team } = Astro.props;
+---
+
+<section class= "py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Rencontrez Notre Équipe</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {team.map((member) => (
+        <TeamMember 
+          name={member.name}
+          role={member.role}
+          image={member.image}
+        />
+      ))}
+    </div>
+  </div>
+</section>
