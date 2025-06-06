@@ -24,10 +24,13 @@ import { Image } from 'astro:assets';
                         <a href={linkServices} class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-base tracking-wide rounded-full text-indigo-500 bg-white hover:bg-gray-100 transition">
                             {linkServicesText}
                         </a>
-                    )}     
-                    <a href={linkContact} class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-base tracking-wide rounded-full text-white bg-indigo-500 hover:bg-indigo-600 transition">
-                        {linkContactText}
-                    </a>
+                    )}    
+                    {linkContact && linkContactText && (
+                        <a href={linkContact} class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-base tracking-wide rounded-full text-white bg-indigo-500 hover:bg-indigo-600 transition">
+                            {linkContactText}
+                        </a>
+                    )} 
+                    
                 </div>
             </div>
 

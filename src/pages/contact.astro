@@ -1,6 +1,94 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/Form.tsx';
+import FAQSection from '../components/FAQSection.astro';
+import HeroSection from '../components/HeroSection.astro';
+
+const faqs = [
+  {
+    question: "Quels est le délai de réponse pour une demande de devis ?",
+    answer: "Nous répondons généralement dans les 24 heures ouvrables. Pour les demandes urgentes, veuillez nous appeler directement."
+  },
+  {
+    question: "Proposez-vous un support technique ?",
+    answer: "Oui, notre équipe est disponible du lundi au vendredi pour toute assistance technique."
+  }
+];
 ---
-<Layout>
-    test
+
+<Layout title="Contactez-nous">
+  <div class="contact-page">
+    <HeroSection
+		  title="Contactez Notre Équipe"
+	  />
+    <div class="grid md:grid-cols-2 gap-8 mt-8">
+        <div class="card bg-white shadow-lg rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">Envoyez-nous un message</h2>
+          <p class="mb-6 text-gray-600">
+              Nous vous répondrons dans les 24 heures ouvrables.
+          </p>
+          <ContactForm client:load />
+        </div>
+
+        <div class="space-y-6">
+            <div class="card bg-white shadow-lg rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Nos coordonnées</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-medium">Email</h3>
+                        <p class="text-gray-600">contact@monsite.com</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-medium">Téléphone</h3>
+                        <p class="text-gray-600">+33 1 23 45 67 89</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-medium">Adresse</h3>
+                        <p class="text-gray-600">
+                            123 Rue de la République<br/>
+                            75001 Paris, France
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-white shadow-lg rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Horaires</h2>
+                <ul class="space-y-2">
+                    <li class="flex justify-between">
+                        <span class="text-gray-600">Lundi - Vendredi</span>
+                        <span>9h - 18h</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span class="text-gray-600">Samedi</span>
+                        <span>10h - 15h</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span class="text-gray-600">Dimanche</span>
+                        <span>Fermé</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <FAQSection 
+      faqItems={faqs}
+      title="Questions Fréquentes"
+      description="Trouvez des réponses aux questions courantes sur nos services."
+    />
+   
+
+  <style>
+    .card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
 </Layout>
