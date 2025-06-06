@@ -1,7 +1,5 @@
 ---
 import icon from '../assets/icon.svg';
-const { url } = Astro;
-const currentPath = url.pathname;
 import { Image } from 'astro:assets';
 
 const links = [
@@ -12,7 +10,6 @@ const links = [
   { href: '/contact', text: 'Contact' }
 ];
 ---
-
 <header class="fixed top-4 z-50 bg-black rounded-full shadow-xl backdrop-blur-md border border-purple-800/30 w-auto max-w-7xl mx-6 transition-all hover:shadow-2xl hover:bg-black/90 md:left-1/2 md:transform md:-translate-x-1/2 left-4">
   <div class="px-4 sm:px-6">
     <div class="flex items-center justify-between h-16 md:h-20">
@@ -28,7 +25,7 @@ const links = [
           {links.map(link => (
             <a 
               href={link.href} 
-              class={`${currentPath === link.href ? 'bg-gray-900 text-gray-400' : 'text-white hover:bg-purple-900 hover:text-white'} px-4 py-2 rounded-full font-medium transition-all`}
+              class="nav-link px-4 py-2 rounded-full font-medium transition-all"
             >
               {link.text}
             </a>
@@ -51,7 +48,7 @@ const links = [
       {links.map(link => (
         <a 
           href={link.href} 
-          class={`${currentPath === link.href ? 'bg-purple-600' : 'text-white hover:bg-purple-600 hover:text-white'} px-4 py-2 rounded-full font-medium transition-all`}
+          class="nav-link px-4 py-2 rounded-full font-medium transition-all"
         >
           {link.text}
         </a>    
@@ -60,7 +57,7 @@ const links = [
   </div>
 </header>
 
-<script>
+<script is:client>
   const menuButton = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
   const mobileIcon = document.getElementById('mobile-icon');
@@ -85,4 +82,17 @@ const links = [
       }
     });
   }
+
+  const path = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === path) {
+      link.classList.add('bg-gray-900', 'text-gray-400');
+    } else {
+      link.classList.add('text-white');
+      link.classList.add('hover:bg-purple-900', 'hover:text-white');
+    }
+  });
 </script>
