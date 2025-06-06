@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServiceDetails from '../components/ServiceDetails.astro';
+import FAQSection from '../components/FAQSection.astro';
+
+const faq = {
+  items: [
+    {
+      question: "Quel est votre délai moyen pour un site vitrine ?",
+      answer: "2-3 semaines pour un site basique, 6-8 semaines pour un projet sur-mesure complexe. Nous fournissons un calendrier précis après analyse de vos besoins."
+    },
+    {
+      question: "Pouvez-vous travailler sur des projets existants ?",
+      answer: "Absolument. Nous proposons des audits techniques et UX pour améliorer les solutions existantes (refontes, optimisations, migrations)."
+    }
+  ]
+};
+
+
+const webServices = [
+  {
+    id: "web-dev",
+    title: "Développement Web Sur-Mesure",
+    summary: "Des sites performants, sécurisés et parfaitement adaptés à vos besoins métiers",
+    description: `
+      <p>Nous créons des solutions web <strong>haute performance</strong> qui répondent précisément à vos objectifs :</p>
+      <ul>
+        <li>Sites vitrines élégants pour valoriser votre image</li>
+        <li>Plateformes e-commerce convertissant mieux</li>
+        <li>Applications web complexes avec backend robuste</li>
+      </ul>
+      <p><strong>Notre différence :</strong> Nous optimisons chaque ligne de code pour des temps de chargement ultra-rapides (≤1s) et une sécurité renforcée (audits OWASP).</p>
+    `,
+    process: [
+      { icon: "🔍", title: "Analyse", detail: "Cadrage technique & UX" },
+      { icon: "✏️", title: "Conception", detail: "Maquettes interactives" },
+      { icon: "💻", title: "Développement", detail: "Méthode Agile" },
+      { icon: "🚀", title: "Livraison", detail: "Formation incluse" }
+    ],
+    technologies: ["React", "Next.js", "Node.js", "GraphQL", "MongoDB"],
+    results: [
+      { value: "+50%", label: "Performance moyenne" },
+      { value: "100%", label: "Sites responsive" },
+      { value: "A+", label: "Sécurité" }
+    ]
+  },
+  {
+    id: "ux-design",
+    title: "Design UX/UI Expert",
+    summary: "Des interfaces qui enchantent vos utilisateurs tout en boostant vos conversions",
+    description: `
+      <p>Notre approche <strong>centrée utilisateur</strong> combine :</p>
+      <ul>
+        <li>Design émotionnel pour créer du lien</li>
+        <li>Ergonomie scientifiquement optimisée</li>
+        <li>Tests utilisateurs itératifs</li>
+      </ul>
+      <p><strong>Résultat :</strong> Des interfaces intuitives qui réduisent de 40% le taux de rebond et augmentent l'engagement.</p>
+    `,
+    process: [
+      { icon: "👥", title: "Research", detail: "Interviews utilisateurs" },
+      { icon: "📊", title: "Analyse", detail: "User journeys" },
+      { icon: "🎨", title: "Design", detail: "Prototypes haute fidélité" },
+      { icon: "✅", title: "Tests", detail: "Optimisations A/B" }
+    ],
+    deliverables: ["Charte UI complète", "Design System", "Guidelines", "Maquettes interactives"],
+    results: [
+      { value: "+35%", label: "Taux de conversion" },
+      { value: "4.8/5", label: "Satisfaction utilisateur" },
+      { value: "-60%", label: "Temps d'apprentissage" }
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "Quel est votre délai moyen pour un site vitrine ?",
+    answer: "2-3 semaines pour un site basique, 6-8 semaines pour un projet sur-mesure complexe. Nous fournissons un calendrier précis après analyse de vos besoins."
+  },
+  {
+    question: "Pouvez-vous travailler sur des projets existants ?",
+    answer: "Absolument. Nous proposons des audits techniques et UX pour améliorer les solutions existantes (refontes, optimisations, migrations)."
+  }
+];
+---
+
+<Layout title="Nos Services Création Digitale | Agence Expert">
+  <main class="bg-white">
+    <HeroSection 
+      title="Nos Services Digitaux"
+      subtitle="Des solutions sur-mesure pour transformer votre présence en ligne"
+      linkContactText="Nous contacter"
+      linkContact="/contact"
+    />
+    <ServiceDetails 
+      services={webServices}
+    />
+
+    <FAQSection 
+      faqItems={faqs}
+      title="Questions Fréquentes"
+      description="Trouvez des réponses aux questions courantes sur nos services."
+    />
+
+    <CtaSection 
+        title="Prêt à transformer votre présence en ligne ?"
+        description="Contactez-nous pour discuter de votre projet."
+        ctaText="Nous contacter"
+        ctaLink="/contact"
+    />
+  </main>
+</Layout>
+
+<style>
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+</style>
