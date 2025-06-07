@@ -1,48 +1,66 @@
-# Astro Starter Kit: Basics
+# 🚀 PixelPerfect - Site Vitrine avec AstroJS
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenue sur le dépôt GitHub du projet **PixelPerfect**, un site vitrine moderne développé avec **AstroJS**. Ce projet a été réalisé dans le cadre d'une évaluation technique visant à simuler un projet client réel pour une agence web fictive.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Le site est déployé sur Netlify ici 👉 [Lien vers le site déployé](https://whimsical-yeot-a220ad.netlify.app/).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+5 pages principales :
+  - Accueil (`/`)
+  - À propos (`/about`)
+  - Services (`/services`)
+  - Blog avec au moins 3 articles dynamiques (`/blog`)
+  - Contact avec formulaire fonctionnel (`/contact`)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+# 🛠️ Installation & Lancement local
 
-## 🚀 Project Structure
+1. **Cloner le projet :**
+   ```bash
+     git clone https://github.com/Adambizien/PixelPerfect.git
+     cd PixelPerfect
+   ```
+2. **Installer les dépendances**
+  ```bash
+    npm install
+  ```
+3. **Builde le projet et preview**
+  ```bash
+    npm run build && npm run preview
+  ```
+4. **Preview en dev**
+  ```bash
+    npm run dev
+  ```
 
-Inside of your Astro project, you'll see the following folders and files:
+# Barème de notation AstroJS - 20 points
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## CHECKLIST D'ÉVALUATION
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### TECHNIQUE (17 points)
 
-## 🧞 Commands
+- [✅] **1 pt** - Projet Astro correctement initialisé et structure respectée
+- [✅] **1 pt** - Configuration `astro.config.mjs` présente et correcte
+- [✅] **1 pt** - Layout principal avec header et footer fonctionnels
+- [✅] **1 pt** - Navigation entre toutes les pages (5 pages minimum)
+- [✅] **1 pt** - Page d'accueil complète (hero, services, CTA)
+- [✅] **1 pt** - Page "À propos" avec contenu pertinent
+- [✅] **1 pt** - Page "Services" détaillée
+- [✅] **1 pt** - Blog avec Content Collections (3 articles minimum)
+- [✅] **1 pt** - Configuration Content Collections (`config.ts`)
+- [✅] **1 pt** - Pages dynamiques pour les articles de blog
+- [✅] **1 pt** - Page de contact avec formulaire
+- [✅] **1 pt** - Au moins 3 composants Astro réutilisables
+- [✅] **1 pt** - Au moins 1 composant React intégré
+- [ ] **1 pt** - Utilisation correcte des props dans les composants
+- [✅] **1 pt** - Styles CSS fonctionnels (Tailwind ou CSS scoped)
+- [✅] **1 pt** - Design responsive (mobile, tablette, desktop)
+- [✅] **1 pt** - Images optimisées avec alt text
 
-All commands are run from the root of the project, from a terminal:
+### CONTENU ET PROFESSIONNALISME (3 points)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- [✅] **1 pt** - Repository GitHub complet avec commits réguliers
+- [✅] **1 pt** - Site déployé sur un hébergement public (Netlify, Vercel, etc.)
+- [✅] **1 pt** - README.md avec instructions et lien de déploiement
 
-## 👀 Want to learn more?
+### BONNUS
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [ ] **+2 pt** - Gerer les conntenus avec un CMS headless (ex: Sanity, Contentful, etc.)
