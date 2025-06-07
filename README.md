@@ -31,7 +31,7 @@ npm run build && npm run preview
 npm run dev
 ```
 
-# Barème de notation AstroJS - 20 points
+# 🎯 Barème de notation AstroJS - 20 points
 
 ## CHECKLIST D'ÉVALUATION
 
