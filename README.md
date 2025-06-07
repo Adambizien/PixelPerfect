@@ -14,22 +14,22 @@ Le site est déployé sur Netlify ici 👉 [Lien vers le site déployé](https:/
 # 🛠️ Installation & Lancement local
 
 1. **Cloner le projet :**
-   ```bash
-     git clone https://github.com/Adambizien/PixelPerfect.git
-     cd PixelPerfect
-   ```
+```bash
+git clone https://github.com/Adambizien/PixelPerfect.git
+cd PixelPerfect
+```
 2. **Installer les dépendances**
-  ```bash
-    npm install
-  ```
+```bash
+npm install
+```
 3. **Builde le projet et preview**
-  ```bash
-    npm run build && npm run preview
-  ```
+```bash
+npm run build && npm run preview
+```
 4. **Preview en dev**
-  ```bash
-    npm run dev
-  ```
+```bash
+npm run dev
+```
 
 # Barème de notation AstroJS - 20 points
 
@@ -50,7 +50,7 @@ Le site est déployé sur Netlify ici 👉 [Lien vers le site déployé](https:/
 - [✅] **1 pt** - Page de contact avec formulaire
 - [✅] **1 pt** - Au moins 3 composants Astro réutilisables
 - [✅] **1 pt** - Au moins 1 composant React intégré
-- [ ] **1 pt** - Utilisation correcte des props dans les composants
+- [🟰] **1 pt** - Utilisation correcte des props dans les composants
 - [✅] **1 pt** - Styles CSS fonctionnels (Tailwind ou CSS scoped)
 - [✅] **1 pt** - Design responsive (mobile, tablette, desktop)
 - [✅] **1 pt** - Images optimisées avec alt text
@@ -63,4 +63,4 @@ Le site est déployé sur Netlify ici 👉 [Lien vers le site déployé](https:/
 
 ### BONNUS
 
-- [ ] **+2 pt** - Gerer les conntenus avec un CMS headless (ex: Sanity, Contentful, etc.)
+- [✖️] **+2 pt** - Gerer les conntenus avec un CMS headless (ex: Sanity, Contentful, etc.)
